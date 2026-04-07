@@ -17,8 +17,6 @@ function App() {
       const response = await fetch(url);
       const data = await response.json();
 
-      console.log("DATA:", data);
-
       const products = data.products || [];
 
       const filtered = products.filter(
@@ -38,10 +36,12 @@ function App() {
     <div>
       <h1>FoodFacts</h1>
 
+      {/* 🔥 Added change to trigger Pull Request */}
+      <h2>Food Search App 🚀</h2>
+
       <SearchBar onSearch={handleSearch} />
 
       {loading && <p>Loading...</p>}
-
       {error && <p>{error}</p>}
 
       {!loading && results.length === 0 && (
